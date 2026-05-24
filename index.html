@@ -2,17 +2,30 @@
 <html lang="ko">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>To-Do List</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <h1>To-Do List</h1>
-    <ul>
-        <li>할 일 1</li>
-        <li>할 일 2</li>
-        <li>할 일 3</li>
+    <ul id="Task">
+        <li><input type="checkbox"> Task 1</li>
+        <li><input type="checkbox"> Task 2</li>
+        <li><input type="checkbox"> Task 3</li>
     </ul>
-    <script src="script.js"></script>
+    <script>
+        const taskList = document.querySelectorAll ('li');
+        for (let i = 0; i<taskList.length; i++){
+            const checkBox = taskList[i].querySelector('input');
+            checkBox.addEventListener('change', function(done) {
+                if (checkBox.checked) {
+                    taskList[i].style.color = 'lightgrey';
+                    taskList[i].style.textDecoration = 'line-through';
+                }else {
+                    taskList[i].style.color = '';
+                    taskList[i].style.textDecoration = '';
+                }
+            });
+        };
+    </script>
 </body>
 </html>
