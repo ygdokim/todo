@@ -12,7 +12,7 @@ h1 {
 ul {
     list-style-type: none;
     padding: 0;
-    margin: 50px auto;
+    margin: 30px auto;
 }
 
 li {
@@ -21,4 +21,13 @@ li {
     margin: 5px 0;
     padding: 10px;
     border-radius: 20px;
+}
+
+#add {
+    margin: 10px;
+}
+
+#textbox {
+    border-radius: 20px;
+    border-color: lightgrey;
 }

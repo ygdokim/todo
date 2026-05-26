@@ -7,25 +7,46 @@
 </head>
 <body>
     <h1>To-Do List</h1>
-    <ul id="Task">
-        <li><input type="checkbox"> Task 1</li>
-        <li><input type="checkbox"> Task 2</li>
-        <li><input type="checkbox"> Task 3</li>
+    <ul id="TaskList">
+        <li><input type="checkbox">Task</li>
     </ul>
+    <input type="button" id="add" value="Add Task"><br>
+    <input type="text" id="textbox" value="newTask">
+
     <script>
-        const taskList = document.querySelectorAll ('li');
-        for (let i = 0; i<taskList.length; i++){
-            const checkBox = taskList[i].querySelector('input');
-            checkBox.addEventListener('change', function(done) {
+        'use strict';
+        //체크박스
+        const taskItems = document.querySelectorAll('li');
+        for (let i = 0; i<taskItems.length; i++){
+            const checkBox = taskItems[i].querySelector('input');
+            checkBox.addEventListener('change', function() {
                 if (checkBox.checked) {
-                    taskList[i].style.color = 'lightgrey';
-                    taskList[i].style.textDecoration = 'line-through';
+                    taskItems[i].style.color = 'lightgrey';
+                    taskItems[i].style.textDecoration = 'line-through';
                 }else {
-                    taskList[i].style.color = '';
-                    taskList[i].style.textDecoration = '';
+                    taskItems[i].style.color = '';
+                    taskItems[i].style.textDecoration = '';
                 }
             });
         };
+
+        //새로운 할 일 추가
+        let textBox = document.querySelector('#textbox');
+        const addButton = document.querySelector('#add');
+        const taskList = document.querySelector('#TaskList');
+        
+        function addList(_task) {
+            let newItem = document.createElement('li');
+            const newCheckBox = document.createElement('input');
+            taskList.appendChild(newItem);
+            newItem.textContent = _task;
+            newCheckBox.setAttribute('type', 'checkbox');
+            newItem.appendChild(newCheckBox);
+        };
+        addButton.onclick = function addTask() {
+            addList(textBox.value);
+        };
+
     </script>
 </body>
 </html>
