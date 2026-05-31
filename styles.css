@@ -1,33 +1,37 @@
 body {
-    font-family: Arial, sans-serif;
-    margin: 100px;
-    margin-top: 50px;
-    text-align: center;
+  font-family: Arial, sans-serif;
+  margin: 100px;
+  margin-top: 50px;
+  text-align: center;
 }
 
 h1 {
-    color: orange;
+  color: orange;
 }
 
 ul {
-    list-style-type: none;
-    padding: 0;
-    margin: 30px auto;
+  list-style-type: none;
+  padding: 0;
+  margin: 30px auto;
 }
 
 li {
-    background-color: #f0f0f0;
-    color: orange;
-    margin: 5px 0;
-    padding: 10px;
-    border-radius: 20px;
+  background-color: #f0f0f0;
+  color: orange;
+  margin: 5px 0;
+  padding: 10px;
+  border-radius: 20px;
+  span.checked {
+    color: lightgray;
+    text-decoration: line-through;
+  }
 }
 
 #add {
-    margin: 10px;
+  margin: 10px;
 }
 
 #textbox {
-    border-radius: 20px;
-    border-color: lightgrey;
+  border-radius: 20px;
+  border-color: lightgrey;
 }
